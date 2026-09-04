@@ -9122,6 +9122,7 @@ GameObject:
   - component: {fileID: 836604397}
   - component: {fileID: 836604396}
   - component: {fileID: 836604395}
+  - component: {fileID: 836604400}
   m_Layer: 0
   m_Name: Porta
   m_TagString: Untagged
@@ -9163,7 +9164,7 @@ ConfigurableJoint:
   m_YMotion: 0
   m_ZMotion: 1
   m_AngularXMotion: 0
-  m_AngularYMotion: 1
+  m_AngularYMotion: 0
   m_AngularZMotion: 0
   m_LinearLimitSpring:
     spring: 0
@@ -9351,6 +9352,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836604393}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &836604400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836604393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf982c50fa00054cbdefc0bc048bb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Labirinto.Mechanics.LiberaGiroAoDeslizar
+  folga: 0.2
 --- !u!1 &846379790
 GameObject:
   m_ObjectHideFlags: 0
