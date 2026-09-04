@@ -4822,13 +4822,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d3dee7cf6465a4394bc1ac0109af05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Labirinto.Player.ThirdPersonCamera
-  inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   target: {fileID: 1506605562}
   distance: 6
   height: 1.6
-  sensitivity: 0.15
-  minPitch: -30
-  maxPitch: 60
+  pitchAngle: 20
   followSmoothing: 12
   collisionBuffer: 0.3
   obstructionMask:
@@ -30337,7 +30334,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5051085079700024144, guid: b5c04a511866bc947a39d35b70b3a102, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Jogador
       objectReference: {fileID: 0}
     - target: {fileID: 6005975210163007562, guid: b5c04a511866bc947a39d35b70b3a102, type: 3}
       propertyPath: m_LocalPosition.x

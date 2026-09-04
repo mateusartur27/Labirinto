@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 953370646806976783}
   - component: {fileID: 1248752552948241163}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Jogador
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Labirinto.Player.PlayerController
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  cameraTransform: {fileID: 0}
   moveForce: 40
   maxSpeed: 6
   jumpImpulse: 6

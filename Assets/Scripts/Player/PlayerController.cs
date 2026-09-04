@@ -7,7 +7,6 @@ namespace Labirinto.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private InputActionAsset inputActions;
-        [SerializeField] private Transform cameraTransform;
 
         [SerializeField] private float moveForce = 40f;
         [SerializeField] private float maxSpeed = 6f;
@@ -52,14 +51,9 @@ namespace Labirinto.Player
         {
             Vector2 input = moveAction.ReadValue<Vector2>();
 
-            Vector3 forward = cameraTransform.forward;
-            Vector3 right = cameraTransform.right;
-            forward.y = 0f;
-            right.y = 0f;
-            forward.Normalize();
-            right.Normalize();
-
-            Vector3 direction = (right * input.x + forward * input.y);
+            // Camera is fixed (no mouse orbit), so WASD maps straight onto world axes:
+            // W/S = world Z (the corridor direction), A/D = world X.
+            Vector3 direction = new Vector3(input.x, 0f, input.y);
             if (direction.sqrMagnitude > 1f) direction.Normalize();
 
             rb.AddForce(direction * moveForce, ForceMode.Force);
