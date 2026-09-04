@@ -9154,7 +9154,7 @@ ConfigurableJoint:
   serializedVersion: 4
   m_ConnectedBody: {fileID: 1445195583}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 2.5, y: 0, z: 0}
+  m_Anchor: {x: 0.5, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
@@ -9169,7 +9169,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 3
+    limit: 6.7300034
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
