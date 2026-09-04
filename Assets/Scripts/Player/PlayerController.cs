@@ -26,6 +26,14 @@ namespace Labirinto.Player
             capsule = GetComponent<CapsuleCollider>();
             rb.constraints = RigidbodyConstraints.FreezeRotation;
 
+            if (inputActions == null)
+            {
+                Debug.LogError("PlayerController: o campo 'Input Actions' esta vazio no Inspector. " +
+                    "Arraste o asset Assets/InputSystem_Actions.inputactions para esse campo.", this);
+                enabled = false;
+                return;
+            }
+
             var map = inputActions.FindActionMap("Player");
             moveAction = map.FindAction("Move");
             jumpAction = map.FindAction("Jump");
@@ -33,6 +41,7 @@ namespace Labirinto.Player
 
         private void OnEnable()
         {
+            if (moveAction == null) return;
             moveAction.Enable();
             jumpAction.Enable();
             jumpAction.performed += OnJumpPerformed;
@@ -40,6 +49,7 @@ namespace Labirinto.Player
 
         private void OnDisable()
         {
+            if (moveAction == null) return;
             jumpAction.performed -= OnJumpPerformed;
             moveAction.Disable();
             jumpAction.Disable();
