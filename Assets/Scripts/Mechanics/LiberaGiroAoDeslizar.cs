@@ -7,12 +7,19 @@ namespace Labirinto.Mechanics
     // e independente. Esse script e o que impõe a ordem "desliza primeiro,
     // gira depois": angularYMotion comeca Locked, e so vira Limited quando
     // a porta ja deslizou (quase) ate o fim do curso definido pelo Linear
-    // Limit. Nunca escreve na posicao/rotacao - so troca a configuracao do
-    // proprio joint, quem move a porta continua sendo o jogador empurrando.
+    // Limit.
+    //
+    // O pivo do giro e sempre o ponto onde a ancora fixa (connectedBody)
+    // esta - se ela ficar la atras, de onde a porta comecou a deslizar, o
+    // giro pivotaria em torno desse ponto antigo, nao da borda atual da
+    // porta. Por isso, no momento de liberar o giro, o script tambem move
+    // a ancora fixa pra posicao atual da porta e trava o eixo linear ali -
+    // a partir dai o mecanismo vira, na pratica, um hinge de verdade.
     [RequireComponent(typeof(ConfigurableJoint))]
     public class LiberaGiroAoDeslizar : MonoBehaviour
     {
         [SerializeField] private float folga = 0.2f;
+        [SerializeField] private Transform ancoraFixa;
 
         private ConfigurableJoint joint;
         private Vector3 posicaoInicial;
@@ -31,6 +38,10 @@ namespace Labirinto.Mechanics
             float distanciaPercorrida = Vector3.Distance(transform.position, posicaoInicial);
             if (distanciaPercorrida >= joint.linearLimit.limit - folga)
             {
+                if (ancoraFixa != null)
+                    ancoraFixa.position = transform.TransformPoint(joint.anchor);
+
+                joint.zMotion = ConfigurableJointMotion.Locked;
                 joint.angularYMotion = ConfigurableJointMotion.Limited;
                 liberado = true;
             }
