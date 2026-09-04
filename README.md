@@ -12,7 +12,7 @@ Jogo de exploração física em Unity 6 (URP): o jogador atravessa um labirinto 
 
 `Assets/Scripts/Player/PlayerController.cs` move o jogador exclusivamente por física:
 
-- `Rigidbody.AddForce` para andar (sem pulo — o jogador não sai do chão em nenhum momento, toda a travessia depende de empurrar/subir em estruturas).
+- `Rigidbody.AddForce` para andar.
 - `Rigidbody.linearVelocity` só é lido/limitado (clamp de velocidade máxima), nunca a posição.
 - Nenhum uso de `transform.position`, `transform.Translate`, `SetPositionAndRotation`, `CharacterController` ou `NavMesh` em nenhum lugar do projeto (a única escrita em `transform.position` de todo o código é da câmera, em `ThirdPersonCamera.cs`, que nunca move o jogador).
 
