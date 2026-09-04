@@ -12630,11 +12630,6 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   moveForce: 40
   maxSpeed: 7
-  jumpImpulse: 6
-  groundCheckRadius: 0.3
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!54 &1068195728
 Rigidbody:
   m_ObjectHideFlags: 0
